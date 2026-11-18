@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #0f0f0f;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d4af37;
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-track {
+  background: #111;
+}
+
+.image-glow {
+  position: relative;
+  overflow: hidden;
+}
+
+.image-glow::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.15),
+    transparent
+  );
+
+  transform: translateX(-100%);
+  transition: 0.8s;
+}
+
+.image-glow:hover::after {
+  transform: translateX(100%);
+}
+.section-divider {
+  position: relative;
+}
+
+.section-divider::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(212,175,55,0.5),
+    transparent
+  );
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image:
+    radial-gradient(rgba(255,255,255,0.03) 1px, transparent 1px);
+
+  background-size: 3px 3px;
+
+  opacity: 0.15;
+
+  pointer-events: none;
+
+  z-index: 9999;
+}
+.glow-button {
+  box-shadow:
+    0 0 20px rgba(212,175,55,0.15);
+}
+
+.glow-button:hover {
+  box-shadow:
+    0 0 40px rgba(212,175,55,0.35);
+}
